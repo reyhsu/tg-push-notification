@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  tg-push-notification:
+    build: .
+    container_name: tg-push-notification
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      - ./app:/app
