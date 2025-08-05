@@ -131,30 +131,33 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> No
 <b>--- Group Management ---</b>
 
 /add &lt;group_id&gt; &lt;group_name&gt;
-Adds a new target group.
-Example: <code>/add -100123456 My Group</code>
+新增一個群組到推播列表中
+範例: <code>/add -100123456 My_Group</code>
 
 /remove &lt;group_id&gt;
-Removes a group from the target list.
-Example: <code>/remove -100123456</code>
+將一個推播群組刪除
+範例: <code>/remove -100123456</code>
 
 /list
-Shows all currently saved target groups.
+列出所有推播群組
 
 <b>--- Message Forwarding ---</b>
 (Must be a reply to a message)
+先將要轉發的訊息輸入在群組中，然後 reply 這個訊息使用以下指令：
 
+1.
 /send &lt;group_name_1&gt;,&lt;group_name_2&gt;
-Forwards the replied message to specific groups by name.
-Example: <code>/send Group A,Group B</code>
+轉送推播訊息到指定的群組中
+範例: <code>/send My_Group_A,My_Group_B</code>
 
+2.
 /broadcast
-Forwards the replied message to ALL saved groups.
+轉送推播訊息到所有的群組
 
 <b>--- General ---</b>
 
 /help
-Displays this help message.
+顯示幫助訊息
 """
     await update.message.reply_text(help_text, parse_mode='HTML')
 
